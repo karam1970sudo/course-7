@@ -30,15 +30,19 @@ void printmataix(int arr[3][3], short rows, short cols)
 	}
 }
 
-bool checktypicalmatrix(int mat1[3][3], int mat2[3][3], int rows, int cols)
+bool checkmatrixidentity(int mat[3][3], int rows, int cols)
 {
 	for (int i = 0; i < rows; i++)
 	{
 		for (int j = 0; j < cols; j++)
 		{
-			if (mat1[i][j] != mat2[i][j])
+			if (i == j && mat[i][j]!= 1)
 			{
-				return false;
+					return false;
+			}
+			else if(i != j && mat[i][j] != 0)
+			{
+					return false;
 			}
 		}
 	}
@@ -48,21 +52,21 @@ bool checktypicalmatrix(int mat1[3][3], int mat2[3][3], int rows, int cols)
 int main()
 {
 	srand((unsigned)time(NULL));
-	int mat1[3][3], mat2[3][3];
+
+	int mat1[3][3];
+	int mat2[3][3] = { {1,0,0},{0,1,0},{0,0,1} }; //Matrix test
 	fillmatrix(mat1, 3, 3);
 	cout << "Matrix 1: " << endl;
 	printmataix(mat1, 3, 3);
 
-	fillmatrix(mat2, 3, 3);
-	cout << "Matrix 2: " << endl;
-	printmataix(mat2, 3, 3);
-
-	if (checktypicalmatrix(mat1,mat2,3,3))
+	
+	
+	if (checkmatrixidentity(mat1,3,3))
 	{
-		cout << "\nYES: both martices are typical.";
+		cout << "\nMatrix is identity" << endl;
 	}
 	else
 	{
-		cout << "\nNo: martices are NOT typical.";
+		cout << "\nMatrix is not identity" << endl;
 	}
 }

@@ -50,6 +50,7 @@ bool equl2Matrix(int arr[3][3],int arr2[3][3],int rows,int cols)
 
 int main()
 {
+	srand((unsigned)time(NULL));
 	int mat1[3][3], mat2[3][3];
 	fillmatrix(mat1, 3, 3);
 	cout << "Matrix 1: " << endl;
