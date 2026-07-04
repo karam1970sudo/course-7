@@ -81,5 +81,8 @@
     <ClCompile Include="problem 22.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="problem 23.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
