@@ -99,9 +99,6 @@
     <ClCompile Include="problem 28.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="problem 29.cpp">
-      <Filter>Resource Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Liblary course 7.h">
