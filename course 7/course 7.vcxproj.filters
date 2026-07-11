@@ -150,6 +150,12 @@
     <ClCompile Include="problem 45.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="problem 46.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="problem 47.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Liblary course 7.h">
