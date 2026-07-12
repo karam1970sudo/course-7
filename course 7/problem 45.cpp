@@ -9,7 +9,7 @@ struct stClient
 	string PinCode;
 	string Name;
 	string Phone;
-	double accountBalance;
+	double AccountBalance;
 };
 
 stClient ReadNewclientData()
@@ -24,7 +24,7 @@ stClient ReadNewclientData()
 	cout << "\nEnter Phone : ";
 	getline(cin,data.Phone);
 	cout << "\nEnter Account Balance : ";
-	cin >> data.accountBalance;
+	cin >> data.AccountBalance;
 	return data;
 }
 
@@ -35,7 +35,7 @@ string ConvertRecordToLine(stClient data, string separator = "#//#")
 	stClientRecord += data.PinCode + separator;
 	stClientRecord += data.Name + separator;
 	stClientRecord += data.Phone + separator;
-	stClientRecord += to_string(data.accountBalance);
+	stClientRecord += to_string(data.AccountBalance);
 	return stClientRecord;
 }
 

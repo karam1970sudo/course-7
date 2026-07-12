@@ -9,7 +9,7 @@ struct stClient
 	string PinCode;
 	string Name;
 	string Phone;
-	double accountBalance;
+	double AccountBalance;
 };
 
 
@@ -42,7 +42,7 @@ stClient ConvertLinetoRecord(string Line, string Seperator = "#//#")
 	Client.PinCode = vString[1];
 	Client.Name = vString[2];
 	Client.Phone = vString[3];
-	Client.accountBalance = stod(vString[4]);
+	Client.AccountBalance = stod(vString[4]);
 	return Client;
 }
 
@@ -53,7 +53,7 @@ void PrintClientRecord(stClient Client)
 	cout << "\nPin Code : " << Client.PinCode;
 	cout << "\nName : " << Client.Name;
 	cout << "\nPhone : " << Client.Phone;
-	cout << "\nAccount Balance: " << Client.accountBalance;
+	cout << "\nAccount Balance: " << Client.AccountBalance;
 }
 int main()
 {
