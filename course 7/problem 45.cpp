@@ -1,9 +1,8 @@
 #include<iostream>
 #include<string>
-#include<vector>
 using namespace std;
 
-struct stClient
+struct sClient
 {
 	string AccountNumber;
 	string PinCode;
@@ -12,39 +11,39 @@ struct stClient
 	double AccountBalance;
 };
 
-stClient ReadNewclientData()
+sClient RaedDataClient()
 {
-	stClient data;
-	cout << "Enter Account Number : ";
-	getline(cin, data.AccountNumber);
-	cout << "\nEnter pincode :";
-	getline(cin, data.PinCode);
-	cout << "\nEnter Name : ";
-	getline(cin, data.Name);
-	cout << "\nEnter Phone : ";
-	getline(cin,data.Phone);
-	cout << "\nEnter Account Balance : ";
-	cin >> data.AccountBalance;
-	return data;
+	sClient Client;
+	cout << "\nEnter Account Number ?";
+	getline(cin, Client.AccountNumber);
+	cout << "\nEnter Pincode ?";
+	getline(cin, Client.PinCode);
+	cout << "\nEnter Name ?";
+	getline(cin, Client.Name);
+	cout << "\nEnter Phone ?";
+	getline(cin, Client.Phone);
+	cout << "\n Enter Account Balance ?";
+	cin >> Client.AccountBalance;
+	return Client;
 }
 
-string ConvertRecordToLine(stClient data, string separator = "#//#")
+string ConvertToLine(sClient Client, string Seprator = "#//#")
 {
-	string stClientRecord = "";
-	stClientRecord += data.AccountNumber + separator;
-	stClientRecord += data.PinCode + separator;
-	stClientRecord += data.Name + separator;
-	stClientRecord += data.Phone + separator;
-	stClientRecord += to_string(data.AccountBalance);
-	return stClientRecord;
+	string Line;
+	Line += Client.AccountNumber + Seprator;
+	Line += Client.PinCode + Seprator;
+	Line += Client.Name + Seprator;
+	Line += Client.Phone + Seprator;
+	Line += to_string(Client.AccountBalance);
+	return Line;
 }
 
 int main()
 {
-	cout << "\nPlease enter Client Data:\n\n";
-	stClient Client = ReadNewclientData();
-	cout << "\n\nClient Record for Saving is: \n";
-	cout << ConvertRecordToLine(Client);
-	system("pause>0");
+	sClient Client;
+	cout << "\nPlease enter Client Data\n\n";
+	Client = RaedDataClient();
+	cout << "\nclient Record saving is\n";
+	cout << ConvertToLine(Client);
 	return 0;
 }

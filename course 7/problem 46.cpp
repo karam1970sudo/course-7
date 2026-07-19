@@ -13,7 +13,7 @@ struct stClient
 };
 
 
-vector<string> SplitString(string S1, string Delim)
+vector <string> SplitString(string S1, string Delim)
 {
 	vector<string> vString;
 	short pos = 0;
