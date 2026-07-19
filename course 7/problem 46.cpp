@@ -1,9 +1,10 @@
 #include<iostream>
 #include<string>
 #include<vector>
+#include<iomanip>
 using namespace std;
 
-struct stClient
+struct sClient
 {
 	string AccountNumber;
 	string PinCode;
@@ -12,8 +13,7 @@ struct stClient
 	double AccountBalance;
 };
 
-
-vector <string> SplitString(string S1, string Delim)
+vector<string> SplitString(string S1, string Delim)
 {
 	vector<string> vString;
 	short pos = 0;
@@ -34,19 +34,19 @@ vector <string> SplitString(string S1, string Delim)
 	return vString;
 }
 
-stClient ConvertLinetoRecord(string Line, string Seperator = "#//#")
+sClient ConvertLinetoRecord(string Line , string Seperator="#//#")
 {
-	vector <string> vString = SplitString(Line, Seperator);
-	stClient Client;
-	Client.AccountNumber = vString[0];
-	Client.PinCode = vString[1];
-	Client.Name = vString[2];
-	Client.Phone = vString[3];
-	Client.AccountBalance = stod(vString[4]);
+	sClient Client;
+	vector <string> vClient = SplitString(Line, Seperator);
+	Client.AccountNumber = vClient[0];
+	Client.PinCode = vClient[1];
+	Client.Name = vClient[2];
+	Client.Phone = vClient[3];
+	Client.AccountBalance = stod(vClient[4]);
 	return Client;
 }
 
-void PrintClientRecord(stClient Client)
+void PrintClientRecord(sClient Client)
 {
 	cout << "\n\nThe following is the extracted client record:\n";
 	cout << "\nAccout Number: " << Client.AccountNumber;
@@ -55,13 +55,15 @@ void PrintClientRecord(stClient Client)
 	cout << "\nPhone : " << Client.Phone;
 	cout << "\nAccount Balance: " << Client.AccountBalance;
 }
+
 int main()
 {
-	string stLine = "A300#//#1234#//#Mohammed karam hayek#//#0909090909#//#5270.000000";
-		cout << "\nLine Record is:\n";
+	string stLine = "A150#//#1234#//#Mohammed Abu-Hadhoud#//#079999#//#5270.000000";
+	cout << "\nLine Record is:\n";
 	cout << stLine;
-	stClient Client = ConvertLinetoRecord(stLine);
+	sClient Client = ConvertLinetoRecord(stLine);
 	PrintClientRecord(Client);
 	system("pause>0");
 	return 0;
+
 }
