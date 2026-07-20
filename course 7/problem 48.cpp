@@ -4,10 +4,8 @@
 #include<fstream>
 #include<iomanip>
 using namespace std;
-const string FileName = "DataFile.txt";
-
-
-struct stClient
+const string FileName = "Client Data.txt";
+struct sClient
 {
 	string AccountNumber;
 	string PinCode;
@@ -37,39 +35,38 @@ vector<string> SplitString(string S1, string Delim)
 	return vString;
 }
 
-stClient ConvertLinetoRecord(string Line, string Seperator = "#//#")
+sClient ConvertLinetoRecord(string Line, string Seperator = "#//#")
 {
-	vector <string> vString = SplitString(Line, Seperator);
-	stClient Client;
-	Client.AccountNumber = vString[0];
-	Client.PinCode = vString[1];
-	Client.Name = vString[2];
-	Client.Phone = vString[3];
-	Client.AccountBalance = stod(vString[4]);
+	sClient Client;
+	vector <string> vClient = SplitString(Line, Seperator);
+	Client.AccountNumber = vClient[0];
+	Client.PinCode = vClient[1];
+	Client.Name = vClient[2];
+	Client.Phone = vClient[3];
+	Client.AccountBalance = stod(vClient[4]);
 	return Client;
 }
 
-vector <stClient> LoadCleintsDataFromFile(string FileName)
+vector <sClient> ExpertDataFileToVector(string FileName)
 {
+	vector <sClient> vClients;
 	fstream MyFile;
-	string line;
-	stClient Client;
-	vector <stClient> DataFromFile;
 	MyFile.open(FileName, ios::in);
 	if (MyFile.is_open())
 	{
-	while(getline(MyFile,line))
-	{
-		Client = ConvertLinetoRecord(line);
-		DataFromFile.push_back(Client);
+		string line;
+		sClient Client;
+		while (getline(MyFile, line))
+		{
+			Client = ConvertLinetoRecord(line);
+			vClients.push_back(Client);
+		}
 	}
 	MyFile.close();
-	}
-	
-	return DataFromFile;
+	return vClients;
 }
 
-void PrintClientRecord(stClient Client)
+void PrintClientRecord(sClient Client)
 {
 	cout << "| " << setw(15) << left << Client.AccountNumber;
 	cout << "| " << setw(10) << left << Client.PinCode;
@@ -78,9 +75,9 @@ void PrintClientRecord(stClient Client)
 	cout << "| " << setw(12) << left << Client.AccountBalance;
 }
 
-void PrintAllClientsData(vector <stClient> vClients)
+void PrintAllClientsData(vector <sClient> vClients)
 {
-	cout << "\n\t\t\t\t\tClient List (" << vClients.size() << ")Client(s).";
+	cout << "\n\t\t\t\t\tClient List (" << vClients.size() << ") Client(s).";
 		cout <<
 		"\n_______________________________________________________";
 	cout << "_________________________________________\n" << endl;
@@ -92,9 +89,9 @@ void PrintAllClientsData(vector <stClient> vClients)
 	cout <<
 		"\n_______________________________________________________";
 	cout << "_________________________________________\n" << endl;
-	for (stClient Client : vClients)
+	for (sClient c : vClients)
 	{
-		PrintClientRecord(Client);
+		PrintClientRecord(c);
 		cout << endl;
 	}
 	cout <<
@@ -104,6 +101,8 @@ void PrintAllClientsData(vector <stClient> vClients)
 
 int main()
 {
-	vector <stClient> Client = LoadCleintsDataFromFile(FileName);
-	PrintAllClientsData(Client);
+	vector <sClient> vClients = ExpertDataFileToVector(FileName);
+	PrintAllClientsData(vClients);
+	system("pause > 0");
+	return 0;
 }
