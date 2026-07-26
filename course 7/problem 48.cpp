@@ -47,7 +47,7 @@ sClient ConvertLinetoRecord(string Line, string Seperator = "#//#")
 	return Client;
 }
 
-vector <sClient> ExpertDataFileToVector(string FileName)
+vector <sClient> LoadCleintsDataFromFile(string FileName)
 {
 	vector <sClient> vClients;
 	fstream MyFile;
@@ -66,7 +66,7 @@ vector <sClient> ExpertDataFileToVector(string FileName)
 	return vClients;
 }
 
-void PrintClientRecord(sClient Client)
+void PrintRecord(sClient Client)
 {
 	cout << "| " << setw(15) << left << Client.AccountNumber;
 	cout << "| " << setw(10) << left << Client.PinCode;
@@ -91,7 +91,7 @@ void PrintAllClientsData(vector <sClient> vClients)
 	cout << "_________________________________________\n" << endl;
 	for (sClient c : vClients)
 	{
-		PrintClientRecord(c);
+		PrintRecord(c);
 		cout << endl;
 	}
 	cout <<
@@ -101,7 +101,7 @@ void PrintAllClientsData(vector <sClient> vClients)
 
 int main()
 {
-	vector <sClient> vClients = ExpertDataFileToVector(FileName);
+	vector <sClient> vClients = LoadCleintsDataFromFile(FileName);
 	PrintAllClientsData(vClients);
 	system("pause > 0");
 	return 0;

@@ -27,7 +27,7 @@ sClient RaedDataClient()
 	return Client;
 }
 
-string ConvertToLine(sClient Client, string Seprator = "#//#")
+string ConvertRecordToLine(sClient Client, string Seprator = "#//#")
 {
 	string Line;
 	Line += Client.AccountNumber + Seprator;
@@ -44,6 +44,6 @@ int main()
 	cout << "\nPlease enter Client Data\n\n";
 	Client = RaedDataClient();
 	cout << "\nclient Record saving is\n";
-	cout << ConvertToLine(Client);
+	cout << ConvertRecordToLine(Client);
 	return 0;
 }

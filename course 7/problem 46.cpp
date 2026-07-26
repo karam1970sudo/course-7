@@ -46,7 +46,7 @@ sClient ConvertLinetoRecord(string Line , string Seperator="#//#")
 	return Client;
 }
 
-void PrintClientRecord(sClient Client)
+void PrintRecord(sClient Client)
 {
 	cout << "\n\nThe following is the extracted client record:\n";
 	cout << "\nAccout Number: " << Client.AccountNumber;
@@ -62,7 +62,7 @@ int main()
 	cout << "\nLine Record is:\n";
 	cout << stLine;
 	sClient Client = ConvertLinetoRecord(stLine);
-	PrintClientRecord(Client);
+	PrintRecord(Client);
 	system("pause>0");
 	return 0;
 

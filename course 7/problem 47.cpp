@@ -30,7 +30,7 @@ sClient RaedDataClient()
 	return Client;
 }
 
-string ConvertToLine(sClient Client, string Seprator = "#//#")
+string ConvertRecordToLine(sClient Client, string Seprator = "#//#")
 {
 	string Line;
 	Line += Client.AccountNumber + Seprator;
@@ -55,7 +55,7 @@ void AddLineToFile(string Line, string FileName)
 void AddClient()
 {
 	
-	string Line = ConvertToLine(RaedDataClient());
+	string Line = ConvertRecordToLine(RaedDataClient());
 	AddLineToFile(Line, FileName);
 }
 
