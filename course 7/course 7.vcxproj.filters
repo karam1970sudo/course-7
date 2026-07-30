@@ -168,7 +168,10 @@
     <ClCompile Include="problem 51.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Project 1.cpp">
+    <ClCompile Include="Project 1 %28Bank%29.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Project 2 (Bank Extention).cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

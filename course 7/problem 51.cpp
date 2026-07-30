@@ -66,7 +66,7 @@ vector <sClient> LoadCleintsDataFromFile(string FileName)
 	return vClients;
 }
 
-bool FindClientWithAccountNumber(string AccountNumber, sClient& client, vector <sClient> vClients)
+bool FindClientByAccountNumber(string AccountNumber, sClient& client, vector <sClient> vClients)
 {
 
 	for (sClient C : vClients)
@@ -148,7 +148,7 @@ bool UpdateClientByAccountNumber(string AccountNumber, vector <sClient>& vClient
 {
 	sClient Client;
 	char Answer = 'n';
-	if (FindClientWithAccountNumber(AccountNumber, Client,vClients))
+	if (FindClientByAccountNumber(AccountNumber, Client,vClients))
 	{
 		PrintRecord(Client);
 		cout << "\n\nAre you sure you want update this client? y/n? ";

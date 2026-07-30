@@ -66,7 +66,7 @@ vector <sClient> LoadCleintsDataFromFile(string FileName)
 	return vClients;
 }
 
-bool FindClientWithAccountNumber(string AccountNumber, sClient& client,vector <sClient> vClients)
+bool FindClientByAccountNumber(string AccountNumber, sClient& client,vector <sClient> vClients)
 {
 	
 	for (sClient C : vClients)
@@ -147,7 +147,7 @@ bool DeleteClientByAccountNumber(string AccountNumber, vector <sClient>& vClient
 {
 	sClient Client;
 	char Answer = 'N';
-	if (FindClientWithAccountNumber(AccountNumber,Client,vClients))
+	if (FindClientByAccountNumber(AccountNumber,Client,vClients))
 	{
 		PrintRecord(Client);
 		cout << "\n\nAre you sure you want delete this client? y/n ? ";
