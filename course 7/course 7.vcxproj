@@ -292,10 +292,10 @@
     <ClCompile Include="problem 9.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="Project 1 %28Bank%29.cpp">
+    <ClCompile Include="Project 1 %28Bank%29.cpp" />
+    <ClCompile Include="Project 2 (Bank Extention).cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="Project 2 (Bank Extention).cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
