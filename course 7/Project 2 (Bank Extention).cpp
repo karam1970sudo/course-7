@@ -420,7 +420,7 @@ void ShowFindClient()
 	cout << "\n--------------------------------------\n";
 	sClient Client;
 	string AccountNumber = ReadClientAccountNumber();
-	vector <sClient> vClients;
+	vector <sClient> vClients = LoadCleintsDataFromFile(FileName);
 	if (FindClientByAccountNumber(AccountNumber, Client, vClients))
 	{
 		PrintRecord(Client);
